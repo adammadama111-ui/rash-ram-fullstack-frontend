@@ -1,4 +1,4 @@
 node_modules/
-dist/docs/screenshots/
+dist/
 *.tar.gz
 .DS_Store
