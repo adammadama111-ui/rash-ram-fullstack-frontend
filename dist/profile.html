@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="StudyFlow: планируйте учебные задачи, отслеживайте сроки и прогресс.">
+  <title>Профиль — StudyFlow</title>
+  <link rel="icon" href="img/study.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="css/styles.css">
+  <script src="js/app.js" defer></script>
+</head>
+<body data-page="profile">
+  <a class="skip-link" href="#main">Перейти к содержимому</a>
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="brand" href="index.html"><span class="brand-mark" aria-hidden="true">✦</span>StudyFlow<span class="brand-dot">.</span></a>
+      <button class="menu-button" type="button" aria-controls="navigation" aria-expanded="false">Меню <span aria-hidden="true">☰</span></button>
+      <nav id="navigation" class="navigation" aria-label="Основная навигация"><a href="index.html">Обзор</a><a href="tasks.html">Мои задачи</a><a href="profile.html" aria-current="page">Профиль</a></nav>
+      <a class="avatar" href="profile.html" aria-label="Открыть профиль"><span data-initials>С</span></a>
+    </div>
+  </header>
+  <main id="main" class="container">
+    <section class="page-heading"><div><p class="eyebrow">УЧЁБА В ТВОЁМ РИТМЕ</p><h1>Мой профиль</h1><p class="muted">Добавь немного себя в своё учебное пространство.</p></div></section>
+    <div class="profile-grid"><aside class="panel profile-card"><span class="large-avatar" data-initials>С</span><h2 data-full-name>Студент</h2><p data-group class="muted">Группа не указана</p><span class="small-badge">STUDYFLOW STUDENT</span><hr><p class="muted">Выполнено задач</p><strong class="profile-number" data-stat="done">0</strong><p class="muted">Каждая галочка — ещё один шаг вперёд.</p></aside><section class="panel" aria-labelledby="profile-title"><p class="eyebrow">ЛИЧНЫЕ ДАННЫЕ</p><h2 id="profile-title">Познакомимся?</h2><form id="profile-form" novalidate><label for="profile-name">Имя</label><input id="profile-name" name="name" required minlength="2" maxlength="40" placeholder="Как к тебе обращаться?"><label for="profile-email">Email</label><input id="profile-email" name="email" type="email" required maxlength="100" placeholder="student@example.com"><label for="profile-group">Учебная группа <span class="muted">(необязательно)</span></label><input id="profile-group" name="group" maxlength="30" placeholder="Например, ИС-23"><p id="profile-error" class="form-error" role="alert"></p><button class="button" type="submit">Сохранить профиль</button><p class="storage-note">Это учебный профиль без регистрации. Данные хранятся только в браузере и не отправляются на сервер.</p></form></section></div>
+</main>
+  <footer class="site-footer"><div class="container footer-inner"><a class="brand" href="index.html">StudyFlow.</a><p>Маленькие шаги. Большие результаты.</p><span>Учебный проект · HTML / CSS / JS</span></div></footer>
+  <p id="notification" class="notification" role="status" aria-live="polite"></p>
+</body>
+</html>

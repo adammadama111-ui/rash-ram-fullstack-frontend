@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="StudyFlow: планируйте учебные задачи, отслеживайте сроки и прогресс.">
+  <title>Мои задачи — StudyFlow</title>
+  <link rel="icon" href="img/study.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="css/styles.css">
+  <script src="js/app.js" defer></script>
+</head>
+<body data-page="tasks">
+  <a class="skip-link" href="#main">Перейти к содержимому</a>
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="brand" href="index.html"><span class="brand-mark" aria-hidden="true">✦</span>StudyFlow<span class="brand-dot">.</span></a>
+      <button class="menu-button" type="button" aria-controls="navigation" aria-expanded="false">Меню <span aria-hidden="true">☰</span></button>
+      <nav id="navigation" class="navigation" aria-label="Основная навигация"><a href="index.html">Обзор</a><a href="tasks.html" aria-current="page">Мои задачи</a><a href="profile.html">Профиль</a></nav>
+      <a class="avatar" href="profile.html" aria-label="Открыть профиль"><span data-initials>С</span></a>
+    </div>
+  </header>
+  <main id="main" class="container">
+    <section class="page-heading"><div><p class="eyebrow">ОТ ПЛАНА К РЕЗУЛЬТАТУ</p><h1>Мои задачи</h1><p class="muted">Все дедлайны перед глазами. Один шаг за другим.</p></div><button class="button" type="button" id="add-task">+ Новая задача</button></section>
+    <section class="panel" aria-labelledby="tasks-title"><h2 id="tasks-title" class="sr-only">Список учебных задач</h2><div class="toolbar"><div class="search-field"><label for="search">Поиск по названию или предмету</label><input id="search" type="search" placeholder="Например, лабораторная работа" maxlength="100"></div><div><label for="subject-filter">Предмет</label><select id="subject-filter"><option value="all">Все предметы</option><option>Веб-разработка</option><option>Дизайн</option><option>Математика</option><option>Английский язык</option><option>Другое</option></select></div><div><label for="sort">Сортировка</label><select id="sort"><option value="date">По сроку</option><option value="priority">По приоритету</option><option value="title">По названию</option></select></div></div>
+      <div class="filter-row" role="group" aria-label="Фильтр по состоянию"><button type="button" data-filter="all" aria-pressed="true">Все</button><button type="button" data-filter="active" aria-pressed="false">В работе</button><button type="button" data-filter="done" aria-pressed="false">Выполнено</button><button type="button" data-filter="overdue" aria-pressed="false">Просрочено</button></div>
+      <p id="results-count" class="muted" role="status"></p><div id="task-list" class="task-list"></div>
+    </section>
+    <p class="storage-note">Задачи сохраняются в этом браузере. Первые карточки — примеры: их можно изменить или удалить.</p>
+    <dialog id="task-dialog" aria-labelledby="dialog-title"><div class="dialog-heading"><h2 id="dialog-title">Новая задача</h2><button id="close-dialog" class="icon-button" type="button" aria-label="Закрыть окно">×</button></div><form id="task-form" novalidate><label for="task-title">Название задачи</label><input id="task-title" name="title" required minlength="3" maxlength="80" placeholder="Что нужно сделать?"><label for="task-subject">Предмет</label><select id="task-subject" name="subject"><option>Веб-разработка</option><option>Дизайн</option><option>Математика</option><option>Английский язык</option><option>Другое</option></select><div class="form-grid"><div><label for="task-date">Срок выполнения</label><input id="task-date" name="date" type="date" required></div><div><label for="task-priority">Приоритет</label><select id="task-priority" name="priority"><option value="normal">Обычный</option><option value="high">Высокий</option><option value="low">Низкий</option></select></div></div><p id="task-error" class="form-error" role="alert"></p><button class="button full-width" type="submit">Сохранить задачу</button></form></dialog>
+    <dialog id="delete-dialog" aria-labelledby="delete-title"><h2 id="delete-title">Удалить задачу?</h2><p id="delete-description"></p><div class="dialog-actions"><button class="button button-outline" type="button" id="cancel-delete">Отмена</button><button class="button button-danger" type="button" id="confirm-delete">Удалить</button></div></dialog>
+</main>
+  <footer class="site-footer"><div class="container footer-inner"><a class="brand" href="index.html">StudyFlow.</a><p>Маленькие шаги. Большие результаты.</p><span>Учебный проект · HTML / CSS / JS</span></div></footer>
+  <p id="notification" class="notification" role="status" aria-live="polite"></p>
+</body>
+</html>
